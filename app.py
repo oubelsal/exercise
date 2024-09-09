@@ -11,12 +11,12 @@ df = pd.read_csv("https://raw.githubusercontent.com/wenjiun/MCM7183Exercise3/mai
 subset_Malaysia = df[df['country'].isin(["Malaysia"])]
 fig = px.scatter(subset_Malaysia, x="year", y="gdp")
 
-subset_2020 = df[df['year'].isin([2020])]
-subset_2020_Asia = subset_2020[subset_2020['state'].isin(["Asia"])]
-subset_2020_Africa = subset_2020[subset_2020['state'].isin(["Africa"])]
-subset_2020_America = subset_2020[subset_2020['state'].isin(["America"])]
-subset_2020_Europe = subset_2020[subset_2020['state'].isin(["Europe"])]
-subset_2020_Oceania = subset_2020[subset_2020['state'].isin(["Oceania"])]
+subset_year = df[df['year'].isin([2020])]
+subset_year_Asia = subset_year[subset_2020['state'].isin(["Asia"])]
+subset_year_Africa = subset_year[subset_2020['state'].isin(["Africa"])]
+subset_year_America = subset_year[subset_2020['state'].isin(["America"])]
+subset_year_Europe = subset_year[subset_2020['state'].isin(["Europe"])]
+subset_year_Oceania = subset_year[subset_2020['state'].isin(["Oceania"])]
 pie_data = [sum(subset_2020_Asia['gdp']),sum(subset_2020_Africa['gdp']),sum(subset_2020_America['gdp']),sum(subset_2020_Europe['gdp']),sum(subset_2020_Oceania['gdp'])];
 mylabels = ["Asia", "Africa", "America", "Europe","Oceania"]
 pie_df = {'Continent': mylabels,'GDP': pie_data}
